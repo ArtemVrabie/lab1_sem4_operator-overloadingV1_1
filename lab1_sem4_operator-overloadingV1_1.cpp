@@ -50,8 +50,45 @@ public:
         return os;
     }
 
+    // Перегрузка оператора сложения (+)
+    Matrix  operator+ ( Matrix a,Matrix b) {
+        Matrix result(a.m, a.n);
+        for (unsigned int i = 0; i < a.m; ++i) {
+            for (unsigned int j = 0; j < a.n; ++j) {
+                result.data[i][j] = a.data[i][j] + b.data[i][j];
+            }
+        }
+        return result;
+    }
+
+    // Перегрузка оператора вычитания (-)
+    Matrix operator- (const Matrix& a, const Matrix& b) {
+        Matrix result(a.m, a.n);
+        for (unsigned int i = 0; i < a.m; ++i) {
+            for (unsigned int j = 0; j < a.n; ++j) {
+                result.data[i][j] = a.data[i][j] - b.data[i][j];
+            }
+        }
+        return result;
+    }
+
+    // Перегрузка оператора умножения (*)
+    Matrix operator* (const Matrix& a, const Matrix& b) {
+        Matrix result(a.m, b.n);
+        for (unsigned int i = 0; i < a.m; ++i) {
+            for (unsigned int j = 0; j < b.n; ++j) {
+                result.data[i][j] = 0;
+                for (unsigned int k = 0; k < a.n; ++k) {
+                    result.data[i][j] += a.data[i][k] * b.data[k][j];
+                }
+            }
+        }
+        return result;
+    }
     
 };
+
+
 
 int main() {
     srand(static_cast<unsigned int>(time(0))); // Для генерации случайных чисел на основе времени 
