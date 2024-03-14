@@ -88,16 +88,43 @@ public:
     
 };
 
-
-
 int main() {
     srand(static_cast<unsigned int>(time(0))); // Для генерации случайных чисел на основе времени 
 
-    Matrix mat(3, 3); // Создание матрицы 3х3
-    mat.randomFill(); // Заполнение случайными значениями
-    std::cout << "Random Matrix" << std::endl;
-    std::cout << mat; // Вывод матрицы
+    Matrix mat1(3, 3); // Создание первой матрицы 3x3
+    mat1.randomFill(); // Заполнение случайными значениями первой матрицы
+    std::cout << "Первая матрица:" << std::endl;
+    std::cout << mat1; // Вывод первой матрицы
+
+    Matrix mat2(3, 3); // Создание второй матрицы 3x3
+    mat2.randomFill(); // Заполнение случайными значениями второй матрицы
+    std::cout << "Вторая матрица:" << std::endl;
+    std::cout << mat2; // Вывод второй матрицы
+
+    Matrix sum = mat1 + mat2; // Сложение матриц
+    std::cout << "Сумма матриц:" << std::endl;
+    std::cout << sum; // Вывод суммы матриц
+
+    Matrix diff = mat1 - mat2; // Вычитание матриц
+    std::cout << "Разность матриц:" << std::endl;
+    std::cout << diff; // Вывод разности матриц
+
+    Matrix mult = mat1 * mat2; // Умножение матриц
+    std::cout << "Произведение матриц:" << std::endl;
+    std::cout << mult; // Вывод произведения матриц
 
     return 0;
 }
+
+
+//int main() {
+  //  srand(static_cast<unsigned int>(time(0))); // Для генерации случайных чисел на основе времени 
+
+    //Matrix mat(3, 3); // Создание матрицы 3х3
+    //mat.randomFill(); // Заполнение случайными значениями
+    //std::cout << "Random Matrix" << std::endl;
+    //std::cout << mat; // Вывод матрицы
+
+    //return 0;
+//}
 
