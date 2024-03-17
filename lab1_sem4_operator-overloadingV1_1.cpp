@@ -1,6 +1,7 @@
 ﻿
 #include <iostream>
 #include <cstdlib>
+#include <math.h>
 
 class Matrix {
 private:
@@ -51,7 +52,7 @@ public:
     }
 
     // Перегрузка оператора сложения (+)
-    friend Matrix  operator+ ( Matrix a,Matrix b) {
+    friend Matrix  operator+ (const Matrix& a, const Matrix& b) {
         Matrix result(a.m, a.n);
         for (unsigned int i = 0; i < a.m; ++i) {
             for (unsigned int j = 0; j < a.n; ++j) {
@@ -62,7 +63,7 @@ public:
     }
 
     // Перегрузка оператора вычитания (-)
-    friend Matrix operator- (const Matrix a, const Matrix b) {
+    friend Matrix operator- (const Matrix& a, const Matrix& b) {
         Matrix result(a.m, a.n);
         for (unsigned int i = 0; i < a.m; ++i) {
             for (unsigned int j = 0; j < a.n; ++j) {
@@ -110,7 +111,7 @@ int main() {
     std::cout << diff; // Вывод разности матриц
 
     Matrix mult = mat1 * mat2; // Умножение матриц
-    std::cout << "Product of mstrices:" << std::endl;
+    std::cout << "Product of matrices:" << std::endl;
     std::cout << mult; // Вывод произведения матриц
 
     return 0;
