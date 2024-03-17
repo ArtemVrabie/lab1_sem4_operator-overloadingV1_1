@@ -62,7 +62,7 @@ public:
     }
 
     // Перегрузка оператора вычитания (-)
-    friend Matrix operator- (const Matrix& a, const Matrix& b) {
+    friend Matrix operator- (const Matrix a, const Matrix b) {
         Matrix result(a.m, a.n);
         for (unsigned int i = 0; i < a.m; ++i) {
             for (unsigned int j = 0; j < a.n; ++j) {
