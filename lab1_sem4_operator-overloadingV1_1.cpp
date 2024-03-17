@@ -51,7 +51,7 @@ public:
     }
 
     // Перегрузка оператора сложения (+)
-    Matrix  operator+ ( Matrix a,Matrix b) {
+    friend Matrix  operator+ ( Matrix a,Matrix b) {
         Matrix result(a.m, a.n);
         for (unsigned int i = 0; i < a.m; ++i) {
             for (unsigned int j = 0; j < a.n; ++j) {
@@ -62,7 +62,7 @@ public:
     }
 
     // Перегрузка оператора вычитания (-)
-    Matrix operator- (const Matrix& a, const Matrix& b) {
+    friend Matrix operator- (const Matrix& a, const Matrix& b) {
         Matrix result(a.m, a.n);
         for (unsigned int i = 0; i < a.m; ++i) {
             for (unsigned int j = 0; j < a.n; ++j) {
@@ -73,7 +73,7 @@ public:
     }
 
     // Перегрузка оператора умножения (*)
-    Matrix operator* (const Matrix& a, const Matrix& b) {
+    friend Matrix operator* (const Matrix& a, const Matrix& b) {
         Matrix result(a.m, b.n);
         for (unsigned int i = 0; i < a.m; ++i) {
             for (unsigned int j = 0; j < b.n; ++j) {
@@ -93,24 +93,24 @@ int main() {
 
     Matrix mat1(3, 3); // Создание первой матрицы 3x3
     mat1.randomFill(); // Заполнение случайными значениями первой матрицы
-    std::cout << "Первая матрица:" << std::endl;
+    std::cout << "First matrix:" << std::endl;
     std::cout << mat1; // Вывод первой матрицы
 
     Matrix mat2(3, 3); // Создание второй матрицы 3x3
     mat2.randomFill(); // Заполнение случайными значениями второй матрицы
-    std::cout << "Вторая матрица:" << std::endl;
+    std::cout << "Second matrix:" << std::endl;
     std::cout << mat2; // Вывод второй матрицы
 
     Matrix sum = mat1 + mat2; // Сложение матриц
-    std::cout << "Сумма матриц:" << std::endl;
+    std::cout << "Sum of matrices:" << std::endl;
     std::cout << sum; // Вывод суммы матриц
 
     Matrix diff = mat1 - mat2; // Вычитание матриц
-    std::cout << "Разность матриц:" << std::endl;
+    std::cout << "Matrix difference:" << std::endl;
     std::cout << diff; // Вывод разности матриц
 
     Matrix mult = mat1 * mat2; // Умножение матриц
-    std::cout << "Произведение матриц:" << std::endl;
+    std::cout << "Product of mstrices:" << std::endl;
     std::cout << mult; // Вывод произведения матриц
 
     return 0;
