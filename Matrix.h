@@ -1,5 +1,7 @@
 #pragma once
-
+#include <iostream>
+#include <cstdlib>
+#include <math.h>
 
 class Matrix {
 private:
@@ -9,12 +11,7 @@ private:
 
 public:
 
-    Matrix(unsigned int rows, unsigned int cols) : m(rows), n(cols) {
-        data = new int* [m];
-        for (unsigned int i = 0; i < m; ++i) {
-            data[i] = new int[n];
-        }
-    }
+    Matrix(unsigned int rows, unsigned int cols);
 
 
     ~Matrix() {

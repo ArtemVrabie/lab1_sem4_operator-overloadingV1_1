@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <math.h>
-#include "Header.h"
+#include "Matrix.h"
 
 
 
@@ -60,14 +60,4 @@ int main() {
 }
 
 
-//int main() {
-  //  srand(static_cast<unsigned int>(time(0))); // Для генерации случайных чисел на основе времени 
-
-    //Matrix mat(3, 3); // Создание матрицы 3х3
-    //mat.randomFill(); // Заполнение случайными значениями
-    //std::cout << "Random Matrix" << std::endl;
-    //std::cout << mat; // Вывод матрицы
-
-    //return 0;
-//}
 
