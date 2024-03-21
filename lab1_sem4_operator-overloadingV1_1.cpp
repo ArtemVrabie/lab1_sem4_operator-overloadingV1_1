@@ -27,16 +27,25 @@ int main() {
     std::cout << "-=:" << std::endl;
     std::cout << mat2;
 
-    mat2 != mat1;
-    std::cout << "!=:" << std::endl;
-    std::cout << mat2;
+    if (mat2 != mat1) {
+        std::cout << "matrices aren't equal" << std::endl;
+        std::cout << true;
+    }
+    else
+        std::cout << "matrices are equal" << std::endl;
+        std::cout << false;
 
-    mat2 == mat1;
-    std::cout << "==:" << std::endl;
-    std::cout << mat2;
+        if (mat2 == mat1) {
+            std::cout << "matrices are equal" << std::endl;
+            std::cout << true;
+        }
+        else
+            std::cout << "matrices aren't equal" << std::endl;
+            std::cout << false;
+
 
     Matrix sum = mat1 + mat2; // Сложение матриц
-    std::cout << "Sum of matrices:" << std::endl;
+    std::cout << "Sum of matrices : " << std::endl;
     std::cout << sum; // Вывод суммы матриц
 
     Matrix diff = mat1 - mat2; // Вычитание матриц
